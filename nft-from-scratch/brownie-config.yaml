@@ -1,0 +1,23 @@
+dependencies:
+  - OpenZeppelin/openzeppelin-contracts@3.4.0 
+  - smartcontractkit/chainlink-brownie-contracts@1.1.1
+compiler:
+  solc:
+    remappings:
+      - '@openzeppelin=OpenZeppelin/openzeppelin-contracts@3.4.0'
+      - '@chainlink=smartcontractkit/chainlink-brownie-contracts@1.1.1'
+# automatically fetch contract sources from Etherscan
+autofetch_sources: True
+dotenv: .env
+# set a custom mnemonic for the development network
+wallets:
+  from_key: '463e0556670e2091cc1123f0b9c1b3e9050b1b27454f7426b4b7859a4a25ed5f'
+  from_mnemonic: ${MNEMONIC}
+networks:
+  default: development
+  rinkeby:
+    vrf_coordinator: '0xb3dCcb4Cf7a26f6cf6B120Cf5A73875B7BBc655B'
+    link_token: '0x01be23585060835e02b77ef475b0cc51aa1e0709'
+    keyhash: '0x2ed0feb3e7fd2022120aa84fab1945545a9f2ffc9076fd6156fa96eaff4c1311'
+    fee: 100000000000000000 
+
